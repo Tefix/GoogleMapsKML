@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafletJS kaart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<nav>
+    <a class="brand" href="../index.html">Kaardiprojekt</a>
+    <a href="../index.html">Avaleht</a>
+    <a href="leaflet.html" class="active">LeafletJS</a>
+    <a href="openlayers.html">OpenLayers</a>
+    <a href="comparison.html">Võrdlus</a>
+</nav>
+
+<main>
+    <div class="map-header">
+        <h1>LeafletJS kaart</h1>
+        <p>Kool, kodu, marsruut ja ümbrus laaditakse KML-failist omnivore teegi abil.</p>
+    </div>
+
+    <div class="map-controls">
+        <button class="btn" id="resetBtn">⟳ Algvaade</button>
+    </div>
+
+    <div id="map-info">Klõpsa kaardil, et näha koordinaate.</div>
+    <div id="map"></div>
+</main>
+
+<footer>Kaardiprojekt &mdash; LeafletJS &amp; OpenLayers &mdash; Roman Zaitsev TARpv24</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@mapbox/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+<script src="../js/leaflet.js"></script>
+
+</body>
+</html>

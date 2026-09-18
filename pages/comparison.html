@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Võrdlus</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <a class="brand" href="../index.html">Kaardiprojekt</a>
+    <a href="../index.html">Avaleht</a>
+    <a href="leaflet.html">LeafletJS</a>
+    <a href="openlayers.html">OpenLayers</a>
+    <a href="comparison.html" class="active">Võrdlus</a>
+</nav>
+
+<main>
+    <h1 class="page-title">LeafletJS vs OpenLayers</h1>
+    <p class="page-subtitle">Praktiline võrdlus kahe kaarditeegi vahel, põhinedes selle projekti teostamisel.</p>
+
+    <div class="map-links">
+        <a class="map-link" href="leaflet.html">Ava LeafletJS kaart</a>
+        <a class="map-link" href="openlayers.html">Ava OpenLayers kaart</a>
+    </div>
+
+    <div class="section-title">Võrdlustabel</div>
+
+    <table>
+        <tr>
+            <th>Kriteerium</th>
+            <th>LeafletJS</th>
+            <th>OpenLayers</th>
+        </tr>
+        <tr>
+            <td>KML tugi</td>
+            <td><span class="bad">Puudub natiivne tugi.</span> Vajas eraldi teeki — <code>leaflet-omnivore</code>.</td>
+            <td><span class="good">Sisseehitatud tugi</span> läbi <code>ol.format.KML</code>. Lisateeki pole vaja.</td>
+        </tr>
+        <tr>
+            <td>Kaardi loomine</td>
+            <td>Lihtne: <code>L.map('map').setView([lat, lng], zoom)</code> — koordinaadid otse WGS84-s.</td>
+            <td>Keerulisem: koordinaadid tuleb teisendada <code>ol.proj.fromLonLat()</code> abil, sest kaart kasutab EPSG:3857 projektsiooni.</td>
+        </tr>
+        <tr>
+            <td>Stiilimine</td>
+            <td>Automaatne: omnivore loeb KML-i stiile. Kohandamine nõuab <code>eachLayer()</code> läbimist.</td>
+            <td>Täielik kontroll: iga geomeetria tüüp stiliseeriti käsitsi. Rohkem koodi, aga paindlikum.</td>
+        </tr>
+        <tr>
+            <td>Popup</td>
+            <td>Väga lihtne: <code>layer.bindPopup('tekst')</code> — üks rida.</td>
+            <td>Nõuab <code>ol.Overlay</code> loomist ja käsitsi positsioneerimist.</td>
+        </tr>
+        <tr>
+            <td>Sündmused</td>
+            <td><code>map.on('click', fn)</code> — annab otse <code>e.latlng</code> WGS84-s.</td>
+            <td><code>map.on('singleclick', fn)</code> — annab EPSG:3857 koordinaadid, mis tuleb eraldi teisendada.</td>
+        </tr>
+        <tr>
+            <td>Animatsioon</td>
+            <td>Puudub sisseehitatud animatsioon — <code>setView()</code> lülitab koheselt.</td>
+            <td>Sisseehitatud: <code>view.animate({ center, zoom, duration })</code> — sujuv üleminek.</td>
+        </tr>
+        <tr>
+            <td>Dokumentatsioon</td>
+            <td>Lühike ja selge. Algajale kergem.</td>
+            <td>Mahukas, palju näiteid. Nõuab rohkem süvenemist.</td>
+        </tr>
+        <tr>
+            <td>Koodi maht</td>
+            <td>~40 rida JavaScripti.</td>
+            <td>~80 rida JavaScripti — peamiselt stiilimise tõttu.</td>
+        </tr>
+    </table>
+
+    <div class="section-title">Järeldus</div>
+    <div class="conclusion">
+        <p><strong>LeafletJS</strong> sobib paremini lihtsate kaartide jaoks — vähem koodi, lihtsam süntaks, popup-id on triviaalsed. KML-i jaoks on vaja lisateeki, mis on ainus puudus.</p>
+        <p><strong>OpenLayers</strong> on võimsam ja paindlikum: KML-tugi on sisseehitatud, stiilimine on täielikult kontrollitav ja animatsioonid töötavad karbist välja. Hind on keerulisem API ja rohkem koodi.</p>
+        <p>Selle projekti jaoks — kool, kodu, marsruut, polügoon — sobivad mõlemad. Kui projekt kasvaks (mitu kihti, projektsiooni muutmine, keerulised stiilid), oleks OpenLayers parem valik.</p>
+    </div>
+</main>
+
+<footer>Kaardiprojekt &mdash; LeafletJS &amp; OpenLayers &mdash; Roman Zaitsev TARpv24</footer>
+
+</body>
+</html>
