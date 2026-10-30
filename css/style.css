@@ -248,3 +248,16 @@ code {
 }
 
 .conclusion p + p { margin-top: 10px; }
+
+/* Third map and narrow screens */
+#cesium-map { height: 560px; position: relative; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+.btn:disabled { opacity: 0.5; cursor: wait; }
+.map-controls { flex-wrap: wrap; }
+@media (max-width: 700px) {
+ nav { height: auto; min-height: 54px; padding: 10px 12px; flex-wrap: wrap; }
+ nav .brand { width: 100%; }
+ nav a { padding: 6px 9px; }
+ main { padding: 24px 14px; }
+ #cesium-map { height: 65vh; min-height: 360px; }
+ .map-links { flex-wrap: wrap; }
+}

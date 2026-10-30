@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CesiumJS kaart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cesium@1.123.1/Build/Cesium/Widgets/widgets.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav>
+    <a class="brand" href="../index.html">Kaardiprojekt</a>
+    <a href="../index.html">Avaleht</a>
+    <a href="leaflet.html">LeafletJS</a>
+    <a href="openlayers.html">OpenLayers</a>
+    <a href="cesium.html" class="active" aria-current="page">CesiumJS</a>
+    <a href="comparison.html">Võrdlus</a>
+</nav>
+<main>
+    <div class="map-header">
+        <h1>CesiumJS — KML 3D-gloobusel</h1>
+        <p>Sama <a href="../data/google.kml" download>google.kml</a> kuvatakse kolmandas keskkonnas. Aluskaart: OpenStreetMap.</p>
+    </div>
+    <div class="map-controls">
+        <button class="btn" id="resetBtn" disabled>Algvaade</button>
+        <button class="btn" id="toggleRouteBtn" disabled aria-pressed="true">Peida marsruut</button>
+    </div>
+    <div id="map-info" role="status" aria-live="polite">Kaardi ja KML-faili laadimine…</div>
+    <div id="cesium-map" aria-label="Kooli ja kodu kaart"></div>
+    <div class="section-title">Kuidas kasutada?</div>
+    <div class="conclusion">
+        <p>Liiguta kaarti hiirega ja suumi kerimisrattaga. Vali objekt, et näha selle nime. Ülal paremal saab vahetada 3D- ja 2D-vaate vahel. Algvaade toob kõik neli põhiobjekti ekraanile; marsruudi nupp peidab või näitab joont.</p>
+        <p>CesiumJS loeb KML-i oma KmlDataSource abil. Kool ja kodu kuvatakse punktidena, marsruut joonena ning kodukoha kujund polügoonina. Punktidele ja kujunditele määratakse ühtne stiil, sest Google Earthi laiendatud stiilide tugi erineb rakenduste vahel.</p>
+        <p>3D-gloobus sobib ruumiliseks vaatlemiseks. Selles lahenduses kasutatakse tasast ellipsoidi, mitte 3D-hooneid ega kõrgusmudelit. Cesium ion kontot ega võtit pole vaja.</p>
+        <p>Allikad: <a href="https://cesium.com/learn/cesiumjs/ref-doc/KmlDataSource.html">KmlDataSource</a> ja <a href="https://cesium.com/learn/cesiumjs/ref-doc/Viewer.html">Viewer</a>.</p>
+    </div>
+</main>
+<footer>Kaardiprojekt &mdash; LeafletJS, OpenLayers &amp; CesiumJS &mdash; Roman Zaitsev TARpv24</footer>
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.123.1/Build/Cesium/Cesium.js"></script>
+<script src="../js/cesium.js"></script>
+</body>
+</html>
