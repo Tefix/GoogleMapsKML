@@ -6,6 +6,8 @@
     <title>CesiumJS kaart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cesium@1.123.1/Build/Cesium/Widgets/widgets.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/cesium@1.123.1/Build/Cesium/Cesium.js"></script>
+    <script defer src="../js/cesium.js"></script>
 </head>
 <body>
 <nav>
@@ -25,8 +27,9 @@
         <button class="btn" id="resetBtn" disabled>Algvaade</button>
         <button class="btn" id="toggleRouteBtn" disabled aria-pressed="true">Peida marsruut</button>
     </div>
+    <noscript><p>CesiumJS kaardi kuvamiseks luba brauseris JavaScript.</p></noscript>
     <div id="map-info" role="status" aria-live="polite">Kaardi ja KML-faili laadimine…</div>
-    <div id="cesium-map" aria-label="Kooli ja kodu kaart"></div>
+    <div id="cesium-map" role="region" aria-label="Kooli ja kodu kaart"></div>
     <div class="section-title">Kuidas kasutada?</div>
     <div class="conclusion">
         <p>Liiguta kaarti hiirega ja suumi kerimisrattaga. Vali objekt, et näha selle nime. Ülal paremal saab vahetada 3D- ja 2D-vaate vahel. Algvaade toob kõik neli põhiobjekti ekraanile; marsruudi nupp peidab või näitab joont.</p>
@@ -36,7 +39,5 @@
     </div>
 </main>
 <footer>Kaardiprojekt &mdash; LeafletJS, OpenLayers &amp; CesiumJS &mdash; Roman Zaitsev TARpv24</footer>
-<script src="https://cdn.jsdelivr.net/npm/cesium@1.123.1/Build/Cesium/Cesium.js"></script>
-<script src="../js/cesium.js"></script>
 </body>
 </html>
