@@ -28,3 +28,11 @@ Branch: `feature/cesium-kml`
 Story tuleb luua enne lõplikke sidumiseks vajalikke commit'e. Kasuta LiteTrackeri integratsiooni juhiste kohast Story viidet branch'is või commit'i sõnumis. Ära eelda viite süntaksit: kontrolli seda oma LiteTrackeri keskkonnas.
 
 Kui Story ID on olemas, tee vajalik siduv commit ja push; veendu LiteTrackeris, et kuvatakse õige repo, branch ning commit'i SHA. Kohalik Git log ega GitHubi screenshot ei asenda LiteTrackeri tõendit.
+
+### Story #89211: GitHubi ja LiteTrackeri sidumine
+
+- Repositoorium: `Tefix/GoogleMapsKML`.
+- Alusharu: `feature/cesium-kml`. Story haru: `#89211_github-litetracker`.
+- Commit'i näide: `[#89211] Document LiteTracker GitHub integration`.
+- [LiteTrackeri juhend](https://help.litetracker.com/articles/github_integration/) kirjeldab Story viidet ja GitHubi webhook'i seadistust.
+- Kontroll: GitHubi webhook peab edastama push-sündmuse. Pärast push'i kontrolli, et Story #89211 tegevusvoos kuvatakse vastava commit'i link.
