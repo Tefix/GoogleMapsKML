@@ -81,11 +81,17 @@
         viewer.selectedEntityChanged.addEventListener(entity => {
             status.textContent = entity ? 'Valitud objekt: ' + (entity.name || 'Nimetu objekt') : loadedMessage;
         });
-        reset.addEventListener('click', showAll);
+        reset.addEventListener('click', () => {
+            viewer.selectedEntity = undefined;
+            showAll();
+        });
         let routeVisible = true;
         toggle.addEventListener('click', () => {
             routeVisible = !routeVisible;
             routes.forEach(entity => { entity.show = routeVisible; });
+            if (!routeVisible && routes.includes(viewer.selectedEntity)) {
+                viewer.selectedEntity = undefined;
+            }
             toggle.textContent = routeVisible ? 'Peida marsruut' : 'Näita marsruuti';
             toggle.setAttribute('aria-pressed', String(routeVisible));
         });
